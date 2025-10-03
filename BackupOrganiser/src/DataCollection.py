@@ -9,5 +9,11 @@ class DataCollection:
         self.updated = updated
         self.backup = []
 
+    def brief_str():
+        pass
+
+    def full_str():
+        pass
+
 if __name__ == "__name__":
     main()
