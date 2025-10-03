@@ -1,18 +1,29 @@
 import DataCollection
 
 class CollectionManager:
-    def add_collection(self, name, description, creation_date, modification_date, updated):
-        self.name = name
-        self.description = description
-        self.creation_date = creation_date
-        self.modification_date = modification_date
-        self.updated = updated
-    def overview():
-        pass
+    def __init__(self):
+        self.collections = []
 
-    def detailed_overview():
-        DataCollection.brief_str()
-        pass
+    def add_collection(self, name, description, creation_date, modification_date, updated):
+        new_collection=DataCollection()
+        new_collection.name = name
+        new_collection.description = description
+        new_collection.creation_date = creation_date
+        new_collection.modification_date = modification_date
+        new_collection.updated = updated
+        self.collections.append(new_collection)
+
+    def overview(self): # tar ut en i taget. lägger till i slutet av listan.
+        out = []
+        for i in self.collections:
+            out.append(i.brief_str())
+        return out
+
+    def detailed_overview(self):
+        out = []
+        for i in self.collections:
+            out.append(i.full_str())
+        return out
 
     def info(collection_name):
         DataCollection.full_str()

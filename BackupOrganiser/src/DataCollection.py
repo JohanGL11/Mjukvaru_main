@@ -1,5 +1,3 @@
-from main import main
-
 class DataCollection:
     def __init__(self, name, description, creation_date, modification_date, updated):
         self.name = name 
@@ -14,6 +12,3 @@ class DataCollection:
 
     def full_str():
         pass
-
-if __name__ == "__name__":
-    main()
