@@ -7,3 +7,10 @@ class backup_manager:
         self.backup_name = backup_name
         self.backup_date = backup_date
         self.backup_location = backup_location
+
+        if collection_object is None:
+            print("Error: collection object is None")
+            return
+
+        backup_entry = f"{backup_name} (date: {backup_date}, Location: {backup_location})"
+        collection_object.backup_entries.append(backup_entry)
