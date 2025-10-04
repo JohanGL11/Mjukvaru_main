@@ -1,4 +1,4 @@
-from DataCollection import DataCollection
+from datacollection import DataCollection
 
 """ Manager är inte en lista, den har collections(i en lista) """
 class CollectionManager: #Hanterar alla DataCollection-objekt
@@ -7,13 +7,21 @@ class CollectionManager: #Hanterar alla DataCollection-objekt
 
     def add_collection(self, name, description, creation_date, last_modified_date, still_updated):
         """ skapar en DataCollection object och lägger till det i listan """
-        new_collection=DataCollection()
+        new_collection = DataCollection(
+            name,
+            description,
+            creation_date,
+            last_modified_date,
+            still_updated
+        )
+        self.collections.append(new_collection)
+        """ new_collection=DataCollection()
         new_collection.name = name
         new_collection.description = description
         new_collection.creation_date = creation_date
         new_collection.last_modified_date = last_modified_date
         new_collection.still_updated = still_updated
-        self.collections.append(new_collection)
+        self.collections.append(new_collection) """
 
     def overview(self): #Tar ut en i taget. lägger till i slutet av listan.
         """ Returnerar en lista med strängar, varje DataCollection för en sträng """
