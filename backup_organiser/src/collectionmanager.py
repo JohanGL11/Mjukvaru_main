@@ -7,6 +7,7 @@ class CollectionManager: #Hanterar alla DataCollection-objekt
 
     def add_collection(self, name, description, creation_date, last_modified_date, still_updated):
         """ skapar en DataCollection object och lägger till det i listan """
+        print("data", name, description, creation_date, last_modified_date, still_updated)
         new_collection = DataCollection(
             name,
             description,
@@ -15,6 +16,7 @@ class CollectionManager: #Hanterar alla DataCollection-objekt
             still_updated
         )
         self.collections.append(new_collection)
+        print(new_collection)
         """ new_collection=DataCollection()
         new_collection.name = name
         new_collection.description = description
@@ -34,7 +36,8 @@ class CollectionManager: #Hanterar alla DataCollection-objekt
         """ samma sak som overview fast returnerar en array """
         out = []
         for  collection in self.collections:
-            out.append(collection.brief_str())
+            out.append(collection.full_str()) #fel för adam
+        print(out)
         return out
 
     def info(self, collection_name): #info om EN lista
